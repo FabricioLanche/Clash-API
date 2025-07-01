@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash API - Consultas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚔️ Clash API</h1>
+      <p>Consulta datos de jugadores, clanes, mazos y cartas</p>
+    </header>
+
+    <main>
+      <!-- Consulta 1: Buscar jugador -->
+      <section class="query-section">
+        <h2>🏆 Buscar Jugador</h2>
+        <div class="input-group">
+          <input type="text" id="nombreJugador" placeholder="Nombre de usuario">
+          <button onclick="buscarJugador()" class="btn-primary">Buscar</button>
+        </div>
+        <ul id="resultadoJugador" class="results"></ul>
+      </section>
+
+      <!-- Consulta 2: Buscar clanes -->
+      <section class="query-section">
+        <h2>🏰 Buscar Clanes por Trofeos</h2>
+        <div class="input-group">
+          <select id="ordenClan" class="select-input">
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+          </select>
+          <input type="number" id="umbralClan" placeholder="Mínimo trofeos">
+          <button onclick="buscarClanes()" class="btn-primary">Buscar</button>
+        </div>
+        <ul id="resultadoClanes" class="results"></ul>
+      </section>
+
+      <!-- Consulta 3: Buscar mazos con cierta carta -->
+      <section class="query-section">
+        <h2>🃏 Buscar Mazos por Carta</h2>
+        <div class="input-group">
+          <input type="text" id="cartaMazo" placeholder="ID o nombre de la carta">
+          <button onclick="buscarMazos()" class="btn-primary">Buscar</button>
+        </div>
+        <ul id="resultadoMazos" class="results"></ul>
+      </section>
+
+      <!-- Consulta 4: Buscar cartas por tipo y rareza -->
+      <section class="query-section">
+        <h2>⚡ Buscar Cartas</h2>
+        <div class="input-group">
+          <select id="tipoCarta" class="select-input">
+            <option value="">Todos los tipos</option>
+            <option value="tropa">Tropa</option>
+            <option value="hechizo">Hechizo</option>
+            <option value="estructura">Estructura</option>
+          </select>
+          <select id="rarezaCarta" class="select-input">
+            <option value="">Todas las rarezas</option>
+            <option value="Comun">Común</option>
+            <option value="Especial">Especial</option>
+            <option value="Epica">Épica</option>
+            <option value="Legendaria">Legendaria</option>
+          </select>
+          <button onclick="buscarCartas()" class="btn-primary">Buscar</button>
+        </div>
+        <ul id="resultadoCartas" class="results"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
